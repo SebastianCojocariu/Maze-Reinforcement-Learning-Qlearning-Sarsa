@@ -1,0 +1,57 @@
+{
+	"map_file_name":"harta_1",
+
+	"policy_type":"maxFirst",
+
+	"game_graphics": {
+					"final_show":"True",
+					"verbose":"False",
+					"sleep":0.1,
+					"plot":"True"
+					},
+
+	"game_rewards":{
+					"move_reward":-0.1,
+					"win_reward":80,
+					"lose_reward":-100,
+					"cheese_reward":10,
+					"min_threshold":-20
+					},
+
+	"training_config":{
+					"training_episodes":2000
+
+					},
+
+
+	"eval_configs":{
+			"frequency": 100,
+			"eval_every":500,
+			"number_of_simulated_games":10,
+			"eval_final_wins": 100
+			},
+
+	
+	"game_hyperparameters":{
+							"learning_rate":{
+											 "initial_value":0.8,
+											 "modify_every_no_episodes":100000,
+											 "type": "exponential",
+											 "theta": 1.0
+											},
+							"epsilon":{
+									 "initial_value":0.05,
+									 "modify_every_no_episodes":100000,
+									 "type": "exponential",
+									 "theta": 1.0
+									},
+
+							"discount":{
+									 "initial_value":0.99,
+									 "modify_every_no_episodes":100000,
+									 "type": "exponential",
+									 "theta": 1.0
+									}
+							}
+			
+}
